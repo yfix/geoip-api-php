@@ -1,50 +1,53 @@
-# MaxMind GeoIP PHP API #
+# MaxMind GeoIP Legacy PHP API #
+
+## Important Note ##
+
+This API is for the GeoIP Legacy format (dat). To read the MaxMind DB format
+(mmdb) used by GeoIP2, please see
+[our GeoIP2 PHP API](https://github.com/maxmind/GeoIP2-php).
 
 ## Requirements ##
 
 This module has no external dependencies. You only need a MaxMind GeoIP
-database. To download a free GeoIP Standard Country database, please see
-our [GeoLite page](http://dev.maxmind.com/geoip/geolite).
+database. To download a free GeoLite Legacy Country database, please see
+our [GeoLite Legacy page](http://dev.maxmind.com/geoip/legacy/geolite).
 
-## Installing with Composer ##
-
-### Define Your Dependencies ###
+## Install via Composer ##
 
 We recommend installing this package with [Composer](http://getcomposer.org/).
-To do this, add ```geoip/geoip``` to your ```composer.json``` file.
 
-```json
-{
-    "require": {
-        "geoip/geoip": "~1.14"
-    }
-}
+### Download Composer ###
+
+To download Composer, run in the root directory of your project:
+
+```bash
+curl -sS https://getcomposer.org/installer | php
 ```
 
-### Install Composer ###
-
-Run in your project root:
-
-```
-curl -s http://getcomposer.org/installer | php
-```
+You should now have the file `composer.phar` in your project directory.
 
 ### Install Dependencies ###
 
 Run in your project root:
 
 ```
-php composer.phar install
+php composer.phar require geoip/geoip:~1.14
 ```
+
+You should now have the files `composer.json` and `composer.lock` as well as
+the directory `vendor` in your project directory. If you use a version control
+system, `composer.json` should be added to it.
 
 ### Require Autoloader ###
 
-You can autoload all dependencies by adding this to your code:
-```
+After installing the dependencies, you need to require the Composer autoloader
+from your code:
+
+```php
 require 'vendor/autoload.php';
 ```
 
-## Installing without Composer ##
+## Install without Composer ##
 
 Place the 'geoip.inc' file in the `include_path` as specified in your
 `php.ini` file or place it in the same directory as your PHP scripts.
@@ -85,7 +88,7 @@ For help with this API or our databases, please see [our support page]
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2013 by MaxMind, Inc.
+This software is Copyright (c) 2014 by MaxMind, Inc.
 
 This is free software, licensed under the GNU Lesser General Public License
 version 2.1 or later.
